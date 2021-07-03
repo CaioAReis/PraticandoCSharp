@@ -2,7 +2,7 @@
 
 namespace PraticandoCSharp.Listas
 {
-    class ListaSimplesEncadeada<T> : ILista<T>
+    class SimplesEncadeada<T> : ILista<T>
     {
         //  Atributos
         private No<T> inicio;
@@ -10,7 +10,7 @@ namespace PraticandoCSharp.Listas
         private int qtdList;
 
         // Construtor
-        public ListaSimplesEncadeada()
+        public SimplesEncadeada()
         {
             this.inicio = null;
             this.fim = null;
@@ -69,7 +69,8 @@ namespace PraticandoCSharp.Listas
 
         public No<T> buscar(int posicao)
         {
-            if (posicao < 0 || posicao > qtdList) throw new Exception("Posição inválida.");
+            if (posicao < 0 || posicao > qtdList) 
+                throw new Exception("Posição fora dos limites da lista.");
             return buscar(inicio, posicao);
         }
 
@@ -147,7 +148,7 @@ namespace PraticandoCSharp.Listas
 
         public void removerFim()
         {
-            if (qtdList == 0) throw new Exception("A lista já esta vazia.");
+            if (estaVazia()) throw new Exception("A lista já esta vazia.");
             else
             {
                 int posicaoFim = buscarPosicao(fim.Dado);

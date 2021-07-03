@@ -8,14 +8,14 @@ namespace PraticandoCSharp
         static void Main(string[] args)
         {
 
-            ListaSimplesEncadeada<object> lista = new ListaSimplesEncadeada<object>();
+            DuplamenteEncadeada<object> lista = new DuplamenteEncadeada<object>();
 
             //  Adicionando
             Console.WriteLine("Está vazia? " + lista.estaVazia());
             lista.adicionarFim('A');
             lista.adicionarFim('B');
             lista.adicionarFim('C');
-            lista.adicionarFim('C');
+            //lista.adicionarFim('C');
             lista.adicionarInicio('X');
             lista.adicionarPosicao('Y', 4);
             Console.WriteLine("Está vazia? " + lista.estaVazia());
